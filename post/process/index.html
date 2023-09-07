@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="">
+<meta name="description" content="欢迎访问[Evm Blog]的个人博客">
+<meta name="author" content="kveln">
+<title>Linux / Ubuntu 进程命令 | Evm Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="Linux / Ubuntu 进程命令 | Evm Blog » Feed"
+  href="https://evmleoe.github.io/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://evmleoe.github.io/styles/main.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+  <meta property="og:description" content="Linux / Ubuntu 进程命令" />
+  <meta property="og:url" content="https://evmleoe.github.io/post/process/" />
+  <meta property="og:locale" content="zh-CN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Evm Blog" />
+  <!-- <script src="../assets/styles/scripts/tocScript.js"></script> -->
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="https://evmleoe.github.io">Evm Blog</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/">首页</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/archives">归档</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/tags">标签</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/post/about">关于</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          <div class="gridea-search-container">
+            <form id="gridea-search-form" style="position: relative" data-update="1694076667300"
+              action="/search/index.html">
+              <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+              <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!-- Page Header -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="https://evmleoe.github.io">Evm Blog</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/">首页</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/archives">归档</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/tags">标签</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/post/about">关于</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          <div class="gridea-search-container">
+            <form id="gridea-search-form" style="position: relative" data-update="1694076667300"
+              action="/search/index.html">
+              <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+              <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="masthead" style="background-image: url('https://evmleoe.github.io/media/images/home-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        
+          <!-- 没Title为其他页面Header -->
+          
+            <!-- 没Title并且有headerType为Post：文章Header -->
+            <div class="post-heading">
+              <span class="tags">
+                
+                <a href="https://evmleoe.github.io/tag/linux/" class="tag">Linux</a>
+                
+                <a href="https://evmleoe.github.io/tag/ubuntu/" class="tag">Ubuntu</a>
+                
+              </span>
+              <h1>Linux / Ubuntu 进程命令</h1>
+              <span class="meta">
+                Posted on
+                2023-07-26，2 min read
+              </span>
+            </div>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+  <!-- Post Content -->
+  <article id="post-content-article">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto post-content-container">
+          
+          <p>📃记录 Ubuntu 系统进程常用指令。</p>
+<!-- more -->
+<h5 id="一-ps-ef-命令">一、 <code>ps -ef</code> 命令</h5>
+<p>1、查询运行进程</p>
+<pre><code class="language-shell">ps -ef
+</code></pre>
+<p>2、查询名称带有“find”的所有进程</p>
+<pre><code class="language-shell">ps -ef | grep find
+</code></pre>
+<p>3、查询并过滤进程id</p>
+<pre><code class="language-shell">ps -ef  grep find  grep -v grep  cut -c 9-15
+</code></pre>
+<p>4、查询并过滤进程id，并杀死该进程</p>
+<pre><code class="language-shell">ps -ef l grep find  grep -v grep l cut -c 9-15  xargs kill -9
+</code></pre>
+<p>如果权限不足的话，尝试加上sudo</p>
+<pre><code class="language-shell">ps -ef  grep find  grep -v grep  cut -c 9-15 xargs sudo kill -9
+</code></pre>
+<p>说明:<br>
+<code>grep find</code>的输出结果是，所有含有关键字“find”的进程；<br>
+<code>grep -v grep</code>是在列出的进程中去除含有关键字“grep”的进程；<br>
+<code>cut-c 9-15</code>是截取输入行的第<code>9</code>个字符到第<code>15</code>个字符，而这正好是进程号<code>PID</code>；<br>
+<code>xargsQ kill -s 9</code>中的xargs命令是用来把前面命令的输出结果 (PID) 作为<code>kill -s 9</code>命令的参数，并执行该命令。<code>kill -s 9</code>会强行杀掉指定进程。</p>
+<h5 id="二-ps-aux-命令">二、 <code>ps -aux</code> 命令</h5>
+<p><code>ps -aux</code> 是显示所有进程和其状态<br>
+其余的检索方式跟 <code>ps -ef</code> 差不多，可以直接将 <code>ps -ef</code> 命令替换成 <code>ps -aux</code> 。</p>
+<h5 id="三-kill-命令">三、 <code>kill</code> 命令</h5>
+<p>1、<code>kill</code><br>
+作用: 根据进程号杀死进程<br>
+用法:</p>
+<pre><code class="language-shell">kill [信号代码] [进程PID]
+</code></pre>
+<p>注意: <code>kill -9</code> 来强制终止退出<br>
+特殊用法:<br>
+停止一个进程，而并不消灭这个进程</p>
+<pre><code class="language-shell">kill -STOP [PID]
+</code></pre>
+<p>重新开始一个停止的进程</p>
+<pre><code class="language-shell">kill -CONT [PID]
+</code></pre>
+<p>强迫进程立即停止，并且不实施清理操作</p>
+<pre><code class="language-shell">kill -KILL[PID]
+</code></pre>
+<p>终止你拥有的全部进程</p>
+<pre><code class="language-shell">kill -9 -1
+</code></pre>
+<p>2、<code>killall</code><br>
+作用: 通过程序的名字，直接杀死所有进程<br>
+用法:</p>
+<pre><code class="language-shell">killall [正在运行的程序名]
+</code></pre>
+<p>例如：</p>
+<pre><code class="language-shell">killall -9 mysql
+</code></pre>
+<p>3、<code>pkill</code><br>
+作用: 通过程序的名字，直接杀死所有进程<br>
+用法:</p>
+<pre><code class="language-shell">pkill [正在运行的程序名]
+</code></pre>
+<p>如</p>
+<pre><code class="language-shell">pkill mysql
+</code></pre>
+
+          <div class="toc-container"><ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E4%B8%80-ps-ef-%E5%91%BD%E4%BB%A4">一、 <code>ps -ef</code> 命令</a></li>
+<li><a href="#%E4%BA%8C-ps-aux-%E5%91%BD%E4%BB%A4">二、 <code>ps -aux</code> 命令</a></li>
+<li><a href="#%E4%B8%89-kill-%E5%91%BD%E4%BB%A4">三、 <code>kill</code> 命令</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+          
+          <div class="comment" style="text-align: center;">
+            
+
+            
+            
+          </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <!-- <li class="list-inline-item">
+              <a href="https://evmleoe.github.io/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li> -->
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>Evm Blog</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://evmleoe.github.io/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://evmleoe.github.io/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  
+  <script src="https://evmleoe.github.io/media/scripts/tocScript.js"></script>
+</body>
+
+</html>

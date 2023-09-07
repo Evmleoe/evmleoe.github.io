@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://evmleoe.github.io</id>
+    <title>Evm Blog</title>
+    <updated>2023-09-07T08:52:03.202Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://evmleoe.github.io"/>
+    <link rel="self" href="https://evmleoe.github.io/atom.xml"/>
+    <subtitle>--温故而知新</subtitle>
+    <logo>https://evmleoe.github.io/images/avatar.png</logo>
+    <icon>https://evmleoe.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2023, Evm Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[ZeroTier使用]]></title>
+        <id>https://evmleoe.github.io/post/zerotier/</id>
+        <link href="https://evmleoe.github.io/post/zerotier/">
+        </link>
+        <updated>2023-09-07T01:24:44.000Z</updated>
+        <summary type="html"><![CDATA[<h4 id="zerotier服务配置与使用">ZeroTier服务配置与使用</h4>
+<h5 id="zerotier采用vlan虚拟局域网技术将不同设备连接到一个虚拟的局域网中从而让这些设备随时随地都可以互相访问">zerotier采用VLAN(虚拟局域网)技术将不同设备连接到一个“虚拟的局域网”中，从而让这些设备随时随地都可以互相访问</h5>
+]]></summary>
+        <content type="html"><![CDATA[<h4 id="zerotier服务配置与使用">ZeroTier服务配置与使用</h4>
+<h5 id="zerotier采用vlan虚拟局域网技术将不同设备连接到一个虚拟的局域网中从而让这些设备随时随地都可以互相访问">zerotier采用VLAN(虚拟局域网)技术将不同设备连接到一个“虚拟的局域网”中，从而让这些设备随时随地都可以互相访问</h5>
+<!-- more -->
+<h4 id="服务端">服务端</h4>
+<ol>
+<li>
+<p>官网注册账号，创建自己的局域网段<br>
+官网：https://my.zerotier.com/<br>
+<img src="https://evmleoe.github.io/post-images/1694076656749.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>点击创建好的网络，进入设置界面进行设置</p>
+</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[单元测试]]></title>
+        <id>https://evmleoe.github.io/post/dan-yuan-ce-shi/</id>
+        <link href="https://evmleoe.github.io/post/dan-yuan-ce-shi/">
+        </link>
+        <updated>2023-08-17T08:32:02.000Z</updated>
+        <summary type="html"><![CDATA[<p>C# / .net 单元测试Demo</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>C# / .net 单元测试Demo</p>
+<!-- more -->
+<p>项目文件.csproj</p>
+<pre><code class="language-xml">&lt;PackageReference Include=&quot;Microsoft.NET.Test.Sdk&quot; Version=&quot;17.7.0&quot; /&gt;
+&lt;PackageReference Include=&quot;NUnit&quot; Version=&quot;3.13.3&quot; /&gt;
+&lt;PackageReference Include=&quot;NUnit3TestAdapter&quot; Version=&quot;4.5.0&quot; /&gt;
+</code></pre>
+<p>WebApi.Tests.MyTest.cs</p>
+<pre><code class="language-c#">public class MyTest
+{
+    [Test]
+    public void demo()
+    {
+        Console.WriteLine(&quot;test&quot;);
+    }
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Pure主题]]></title>
+        <id>https://evmleoe.github.io/post/pure-zhu-ti/</id>
+        <link href="https://evmleoe.github.io/post/pure-zhu-ti/">
+        </link>
+        <updated>2023-07-27T01:21:53.000Z</updated>
+        <summary type="html"><![CDATA[<p>Pure主题</p>
+<p>本主题另提供 Hexo 版本：<a href="https://github.com/renbaoshuo/hexo-theme-pure">renbaoshuo/hexo-theme-pure</a></p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Pure主题</p>
+<p>本主题另提供 Hexo 版本：<a href="https://github.com/renbaoshuo/hexo-theme-pure">renbaoshuo/hexo-theme-pure</a></p>
+<!-- more -->
+<h2 id="介绍">介绍</h2>
+<p>一款专为 Gridea 设计的主题，默认内置 「简约白」 「暗夜黑」 「银光灰」 「墨草绿」 4 种配色方案。另外还支持以下功能：</p>
+<ul>
+<li>自定义配色</li>
+<li>移动端页面适配</li>
+<li>社交信息设置</li>
+<li>谷歌统计</li>
+<li>友链功能（感谢 <a href="https://github.com/renbaoshuo">@renbaoshuo</a>）</li>
+<li>在根目录下增加关于页面（感谢 <a href="https://github.com/renbaoshuo">@renbaoshuo</a>） *<em>格式 <code>https://example.com/about/</code></em></li>
+<li>自定义 CSS 样式</li>
+<li>文章搜索功能（感谢 <a href="https://github.com/uiYzzi">@uiYzzi</a>）</li>
+</ul>
+<h2 id="预览">预览</h2>
+<p>示例站点：<a href="https://imhanjie.com/">https://imhanjie.com/</a></p>
+<figure data-type="image" tabindex="1"><img src="https://user-images.githubusercontent.com/47095648/125601864-48e2d557-4600-4477-afbc-f8a4af533a10.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://user-images.githubusercontent.com/47095648/125601910-46d476b4-62d8-44f9-9e4b-cc1191b90463.png" alt="image" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://user-images.githubusercontent.com/47095648/125601949-aad6492e-9ebd-4db6-a40c-70f9573f9ba1.png" alt="image" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://user-images.githubusercontent.com/47095648/125601977-ab1188d1-9260-449e-be50-006d68df6aa3.png" alt="image" loading="lazy"></figure>
+<h2 id="安装">安装</h2>
+<p>使用 <code>git clone</code> 本项目到 Gridea 站点源文件路径的 <code>themes</code> 目录内，或者前往 <a href="https://github.com/imhanjie/gridea-theme-pure/releases">release</a> 页面下载最新的 release 解压到 Gridea 站点源文件路径的 <code>themes</code> 目录内，然后 <strong>重启  Gridea</strong> 即可。</p>
+<blockquote>
+<p>Gridea 站点源文件路径：可在 Gridea 客户端设置页面查看。</p>
+</blockquote>
+<h2 id="注意事项">注意事项</h2>
+<h3 id="友链功能">友链功能</h3>
+<p>在主题自定义配置里面配置好友链信息后还需要在 Gridea 配置友链的入口，点击 Gridea 菜单选项卡中右上角加号添加友链菜单，配置如下：</p>
+<img src="https://user-images.githubusercontent.com/47095648/125602041-c2cff23f-c549-41af-8b3d-6503f260d7c1.png" width="350px" />
+<h3 id="关于页面">关于页面</h3>
+<p>在主题自定义配置里配置好关于信息后还需要在 Gridea 配置关于的入口，点击 Gridea 菜单选项卡中右上角加号添加关于菜单，与友链页面类似。</p>
+<h3 id="搜索功能">搜索功能</h3>
+<p>启用搜索功能后请及时更新 CDN 上缓存的静态资源文件，以免无法正常显示搜索样式。</p>
+<h2 id="感谢">感谢</h2>
+<ul>
+<li><a href="https://gridea.dev/">Gridea - 一个静态博客写作客户端</a></li>
+<li><a href="https://github.com/getgridea/gridea-theme-starter">gridea-theme-starter</a></li>
+</ul>
+<h2 id="维护者">维护者</h2>
+<ul>
+<li><a href="https://github.com/imhanjie">@imhanjie</a></li>
+<li><a href="https://github.com/renbaoshuo">@renbaoshuo</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Phantom介绍]]></title>
+        <id>https://evmleoe.github.io/post/phantom/</id>
+        <link href="https://evmleoe.github.io/post/phantom/">
+        </link>
+        <updated>2023-07-27T01:10:20.000Z</updated>
+        <summary type="html"><![CDATA[<p>Phantom主题</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Phantom主题</p>
+<!-- more -->
+<h2 id="介绍">介绍</h2>
+<p>本主题借鉴修改于HTML5UP的phantom主题，适配Gridea并支持以下功能：</p>
+<ul>
+<li>移动端页面适配</li>
+<li>社交信息与备案信息设置</li>
+<li>谷歌统计</li>
+<li>友链页面</li>
+<li>相册页面</li>
+<li>日常页面 ( Memos )</li>
+<li>Katex公式与代码高亮</li>
+<li>Waline与Twikoo评论支持</li>
+<li>霞鹜文楷字体支持</li>
+</ul>
+<h2 id="安装">安装</h2>
+<p>使用 git clone 本项目到 Gridea 站点源文件路径的 themes 目录内，或者下载最新的源代码解压到 Gridea 站点源文件路径的 themes 目录内，然后 重启 Gridea 即可。<br>
+Gridea 站点源文件路径：可在 Gridea 客户端设置页面查看。</p>
+<h2 id="使用">使用</h2>
+<p>本主题建议使用规格统一的封面图片。</p>
+<h2 id="友链与相册页面配置">友链与相册页面配置</h2>
+<p>在菜单-&gt;右上角+号，按照图片添加<br>
+<img src="https://evmleoe.github.io/post-images/1690420506977.png" alt="" loading="lazy"></p>
+<h2 id="日常页面配置">日常页面配置</h2>
+<p>在菜单-&gt;右上角+号，按照图片添加<br>
+<img src="https://evmleoe.github.io/post-images/1690420542530.png" alt="" loading="lazy"><br>
+主题设置中需填的内容可参考: <a href="https://immmmm.com/bb-by-memos/">哔哔点啥 By Memos</a></p>
+<h2 id="预览">预览</h2>
+<p><img src="https://evmleoe.github.io/post-images/1690420789714.png" alt="" loading="lazy"><br>
+<img src="https://evmleoe.github.io/post-images/1690420793200.png" alt="" loading="lazy"><br>
+<img src="https://evmleoe.github.io/post-images/1690420803379.png" alt="" loading="lazy"></p>
+<h2 id="感谢">感谢</h2>
+<ul>
+<li><a href="https://html5up.net/phantom">https://html5up.net/phantom</a></li>
+<li><a href="https://github.com/getgridea/gridea-theme-starter">gridea-theme-starter</a></li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello World!]]></title>
+        <id>https://evmleoe.github.io/post/hello-world/</id>
+        <link href="https://evmleoe.github.io/post/hello-world/">
+        </link>
+        <updated>2023-07-26T06:24:02.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏👏👏   <strong>杂七杂八</strong> ！<br>
+📝✏️  <strong>有影有迹</strong><br>
+一个自娱自乐的电子草稿。<br>
+...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏👏👏   <strong>杂七杂八</strong> ！<br>
+📝✏️  <strong>有影有迹</strong><br>
+一个自娱自乐的电子草稿。<br>
+...</p>
+<!-- more -->
+<p>~</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux / Ubuntu ufw防火墙指令]]></title>
+        <id>https://evmleoe.github.io/post/ufw/</id>
+        <link href="https://evmleoe.github.io/post/ufw/">
+        </link>
+        <updated>2023-07-26T06:03:23.000Z</updated>
+        <summary type="html"><![CDATA[<p>📃记录 ufw防火墙的 安装、及常用指令。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>📃记录 ufw防火墙的 安装、及常用指令。</p>
+<!-- more -->
+<h5 id="安装">安装</h5>
+<p>要在 <code>Ubuntu</code> 中开放端口，需要使用 <code>ufw</code> 防火墙<br>
+首先，确保 ufw 已经安装。如果尚未安装，可以使用以下命令进行安装</p>
+<pre><code class="language-shell">sudo apt-get install ufw
+</code></pre>
+<p>然后，使用以下命令开启 ufw 防火墙</p>
+<pre><code class="language-shell">sudo ufwenable
+</code></pre>
+<p>防火墙开启后，可以使用以下命令开放端口:</p>
+<pre><code class="language-shell">sudo ufw allow [端口号]/[协议]
+</code></pre>
+<p>例如，如果要开放 HTTP 端口(即端口 80)，可以使用以下命令</p>
+<pre><code class="language-shell">sudo ufw allow 80/tcp
+</code></pre>
+<p>如果要开放 HTTPS 端口(即端口 443)，可以使用以下命令</p>
+<pre><code class="language-shell">sudo ufw allow 443/tcp
+</code></pre>
+<p>最后，可以使用以下命令查看已开放的端口</p>
+<pre><code class="language-shell">sudo ufw status
+</code></pre>
+<h5 id="其他常用指令">其他常用指令：</h5>
+<p>查看防火墙状态</p>
+<pre><code class="language-shell">sudo ufw status
+</code></pre>
+<p>允许外部访问80端口</p>
+<pre><code class="language-shell">sudo ufw allow 80
+</code></pre>
+<p>禁止外部访问80 端口</p>
+<pre><code class="language-shell">sudo ufw delete allow 80
+</code></pre>
+<p>允许此IP访问所有的本机端口</p>
+<pre><code class="language-shell">sudo ufw allow from 192.168.1.1
+</code></pre>
+<p>禁止外部访问smtp服务</p>
+<pre><code class="language-shell">sudo ufw deny smtp
+</code></pre>
+<p>删除上面建立的某条规则</p>
+<pre><code class="language-shell">sudo ufw delete allow smtp
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux / Ubuntu安装mysql8.0]]></title>
+        <id>https://evmleoe.github.io/post/mysql8/</id>
+        <link href="https://evmleoe.github.io/post/mysql8/">
+        </link>
+        <updated>2023-07-26T06:01:36.000Z</updated>
+        <summary type="html"><![CDATA[<p>📃记录 mysql8.0的 安装、及常用指令。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>📃记录 mysql8.0的 安装、及常用指令。</p>
+<!-- more -->
+<h5 id="安装">安装</h5>
+<p>第一步：更新软件包</p>
+<pre><code class="language-shell">sudo apt update
+</code></pre>
+<p>第二步：安装最新mysql</p>
+<pre><code class="language-shell">sudo apt install mysql-server -y
+</code></pre>
+<p>第三步：安装完成后查看mysql版本</p>
+<pre><code class="language-shell">mysql --version
+</code></pre>
+<p>这时候可以通过不用密码回车直接进入mysql</p>
+<pre><code class="language-shell">mysql -uroot -p
+</code></pre>
+<h5 id="修改mysql密码">修改mysql密码</h5>
+<p>第一步：停止服务</p>
+<pre><code class="language-shell">sudo /etc/init.d/mysql stop
+</code></pre>
+<p>第二步：创建文件夹并赋予权限<br>
+创建文件夹</p>
+<pre><code class="language-shell">sudo mkdir /var/run/mysqld
+</code></pre>
+<p>设置权限</p>
+<pre><code class="language-shell">sudo chown mysql /var/run/mysqld
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://evmleoe.github.io/post-images/1690351827949.jpg" alt="" loading="lazy"></figure>
+<p>第三步：设置mysql跳过登陆权限</p>
+<pre><code class="language-shell">sudo mysqld_safe --skip-grant-tables &amp;
+</code></pre>
+<p>输出日志后，直接输入</p>
+<pre><code class="language-shell">sudo mysql --user=root mysql
+</code></pre>
+<p>即可进入mysql<br>
+<img src="https://evmleoe.github.io/post-images/1690352297445.jpg" alt="" loading="lazy"></p>
+<p>第四步：设置密码认证字符串为null，并刷新</p>
+<pre><code class="language-shell">update mysql.user set authentication_string=null where User='root';
+</code></pre>
+<p>刷新</p>
+<pre><code class="language-shell">flush privileges;
+</code></pre>
+<p>第五步：设置root账号的登陆密码为root，并刷新</p>
+<pre><code class="language-shell">alter user 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+</code></pre>
+<p>刷新</p>
+<pre><code class="language-shell">flush privileges;
+</code></pre>
+<p>第六步：退出mysql<br>
+<code>exit;</code>或者 <code>Ctrl + z</code></p>
+<p>第七步：重启mysql服务<br>
+杀死mysql所有进程</p>
+<pre><code class="language-shell">sudo killall -u -mysql
+</code></pre>
+<p>重启</p>
+<pre><code class="language-shell">sudo /etc/init.d/mysql start
+</code></pre>
+<h5 id="设置mysql开机自启动">设置mysql开机自启动</h5>
+<p>设置自启动</p>
+<pre><code class="language-shell">sudo update-rc.d -f mysql defaults
+</code></pre>
+<p>查看是否自启动</p>
+<pre><code class="language-shell">sudo service mysql status
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://evmleoe.github.io/post-images/1690352307763.jpg" alt="" loading="lazy"></figure>
+<p>取消mysql开机自启动</p>
+<pre><code class="language-shell">sudo update-rc.d -f mysql remove
+</code></pre>
+<h5 id="其他常用指令">其他常用指令：</h5>
+<p>查看mysql运行状态</p>
+<pre><code class="language-shell">sudo service mysql status
+</code></pre>
+<p>启动mysql服务</p>
+<pre><code class="language-shell">sudo service mysgl start
+</code></pre>
+<p>停止mysql服务</p>
+<pre><code class="language-shell">sudo service mysql stop
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux / Ubuntu 进程命令]]></title>
+        <id>https://evmleoe.github.io/post/process/</id>
+        <link href="https://evmleoe.github.io/post/process/">
+        </link>
+        <updated>2023-07-26T05:56:15.000Z</updated>
+        <summary type="html"><![CDATA[<p>📃记录 Ubuntu 系统进程常用指令。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>📃记录 Ubuntu 系统进程常用指令。</p>
+<!-- more -->
+<h5 id="一-ps-ef-命令">一、 <code>ps -ef</code> 命令</h5>
+<p>1、查询运行进程</p>
+<pre><code class="language-shell">ps -ef
+</code></pre>
+<p>2、查询名称带有“find”的所有进程</p>
+<pre><code class="language-shell">ps -ef | grep find
+</code></pre>
+<p>3、查询并过滤进程id</p>
+<pre><code class="language-shell">ps -ef  grep find  grep -v grep  cut -c 9-15
+</code></pre>
+<p>4、查询并过滤进程id，并杀死该进程</p>
+<pre><code class="language-shell">ps -ef l grep find  grep -v grep l cut -c 9-15  xargs kill -9
+</code></pre>
+<p>如果权限不足的话，尝试加上sudo</p>
+<pre><code class="language-shell">ps -ef  grep find  grep -v grep  cut -c 9-15 xargs sudo kill -9
+</code></pre>
+<p>说明:<br>
+<code>grep find</code>的输出结果是，所有含有关键字“find”的进程；<br>
+<code>grep -v grep</code>是在列出的进程中去除含有关键字“grep”的进程；<br>
+<code>cut-c 9-15</code>是截取输入行的第<code>9</code>个字符到第<code>15</code>个字符，而这正好是进程号<code>PID</code>；<br>
+<code>xargsQ kill -s 9</code>中的xargs命令是用来把前面命令的输出结果 (PID) 作为<code>kill -s 9</code>命令的参数，并执行该命令。<code>kill -s 9</code>会强行杀掉指定进程。</p>
+<h5 id="二-ps-aux-命令">二、 <code>ps -aux</code> 命令</h5>
+<p><code>ps -aux</code> 是显示所有进程和其状态<br>
+其余的检索方式跟 <code>ps -ef</code> 差不多，可以直接将 <code>ps -ef</code> 命令替换成 <code>ps -aux</code> 。</p>
+<h5 id="三-kill-命令">三、 <code>kill</code> 命令</h5>
+<p>1、<code>kill</code><br>
+作用: 根据进程号杀死进程<br>
+用法:</p>
+<pre><code class="language-shell">kill [信号代码] [进程PID]
+</code></pre>
+<p>注意: <code>kill -9</code> 来强制终止退出<br>
+特殊用法:<br>
+停止一个进程，而并不消灭这个进程</p>
+<pre><code class="language-shell">kill -STOP [PID]
+</code></pre>
+<p>重新开始一个停止的进程</p>
+<pre><code class="language-shell">kill -CONT [PID]
+</code></pre>
+<p>强迫进程立即停止，并且不实施清理操作</p>
+<pre><code class="language-shell">kill -KILL[PID]
+</code></pre>
+<p>终止你拥有的全部进程</p>
+<pre><code class="language-shell">kill -9 -1
+</code></pre>
+<p>2、<code>killall</code><br>
+作用: 通过程序的名字，直接杀死所有进程<br>
+用法:</p>
+<pre><code class="language-shell">killall [正在运行的程序名]
+</code></pre>
+<p>例如：</p>
+<pre><code class="language-shell">killall -9 mysql
+</code></pre>
+<p>3、<code>pkill</code><br>
+作用: 通过程序的名字，直接杀死所有进程<br>
+用法:</p>
+<pre><code class="language-shell">pkill [正在运行的程序名]
+</code></pre>
+<p>如</p>
+<pre><code class="language-shell">pkill mysql
+</code></pre>
+]]></content>
+    </entry>
+</feed>

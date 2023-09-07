@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta name="referrer" content="never">
+<meta name="keywords" content="">
+<meta name="description" content="欢迎访问[Evm Blog]的个人博客">
+<meta name="author" content="kveln">
+<title>Linux / Ubuntu安装mysql8.0 | Evm Blog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link
+  href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+  rel='stylesheet' type='text/css'>
+<link rel="alternate" type="application/rss+xml" title="Linux / Ubuntu安装mysql8.0 | Evm Blog » Feed"
+  href="https://evmleoe.github.io/atom.xml">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.10/build/styles/androidstudio.min.css">
+<link href="https://evmleoe.github.io/styles/main.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+  <meta property="og:description" content="Linux / Ubuntu安装mysql8.0" />
+  <meta property="og:url" content="https://evmleoe.github.io/post/mysql8/" />
+  <meta property="og:locale" content="zh-CN" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Evm Blog" />
+  <!-- <script src="../assets/styles/scripts/tocScript.js"></script> -->
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="https://evmleoe.github.io">Evm Blog</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/">首页</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/archives">归档</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/tags">标签</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/post/about">关于</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          <div class="gridea-search-container">
+            <form id="gridea-search-form" style="position: relative" data-update="1694076667300"
+              action="/search/index.html">
+              <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+              <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <!-- Page Header -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="https://evmleoe.github.io">Evm Blog</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/">首页</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/archives">归档</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/tags">标签</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          
+          <a class="nav-link" href="/post/about">关于</a>
+          
+        </li>
+        
+        <li class="nav-item">
+          <div class="gridea-search-container">
+            <form id="gridea-search-form" style="position: relative" data-update="1694076667300"
+              action="/search/index.html">
+              <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+              <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header class="masthead" style="background-image: url('https://evmleoe.github.io/media/images/home-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        
+          <!-- 没Title为其他页面Header -->
+          
+            <!-- 没Title并且有headerType为Post：文章Header -->
+            <div class="post-heading">
+              <span class="tags">
+                
+                <a href="https://evmleoe.github.io/tag/mysql/" class="tag">MySQL</a>
+                
+                <a href="https://evmleoe.github.io/tag/linux/" class="tag">Linux</a>
+                
+                <a href="https://evmleoe.github.io/tag/ubuntu/" class="tag">Ubuntu</a>
+                
+              </span>
+              <h1>Linux / Ubuntu安装mysql8.0</h1>
+              <span class="meta">
+                Posted on
+                2023-07-26，2 min read
+              </span>
+            </div>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+  <!-- Post Content -->
+  <article id="post-content-article">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto post-content-container">
+          
+          <p>📃记录 mysql8.0的 安装、及常用指令。</p>
+<!-- more -->
+<h5 id="安装">安装</h5>
+<p>第一步：更新软件包</p>
+<pre><code class="language-shell">sudo apt update
+</code></pre>
+<p>第二步：安装最新mysql</p>
+<pre><code class="language-shell">sudo apt install mysql-server -y
+</code></pre>
+<p>第三步：安装完成后查看mysql版本</p>
+<pre><code class="language-shell">mysql --version
+</code></pre>
+<p>这时候可以通过不用密码回车直接进入mysql</p>
+<pre><code class="language-shell">mysql -uroot -p
+</code></pre>
+<h5 id="修改mysql密码">修改mysql密码</h5>
+<p>第一步：停止服务</p>
+<pre><code class="language-shell">sudo /etc/init.d/mysql stop
+</code></pre>
+<p>第二步：创建文件夹并赋予权限<br>
+创建文件夹</p>
+<pre><code class="language-shell">sudo mkdir /var/run/mysqld
+</code></pre>
+<p>设置权限</p>
+<pre><code class="language-shell">sudo chown mysql /var/run/mysqld
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://evmleoe.github.io/post-images/1690351827949.jpg" alt="" loading="lazy"></figure>
+<p>第三步：设置mysql跳过登陆权限</p>
+<pre><code class="language-shell">sudo mysqld_safe --skip-grant-tables &amp;
+</code></pre>
+<p>输出日志后，直接输入</p>
+<pre><code class="language-shell">sudo mysql --user=root mysql
+</code></pre>
+<p>即可进入mysql<br>
+<img src="https://evmleoe.github.io/post-images/1690352297445.jpg" alt="" loading="lazy"></p>
+<p>第四步：设置密码认证字符串为null，并刷新</p>
+<pre><code class="language-shell">update mysql.user set authentication_string=null where User='root';
+</code></pre>
+<p>刷新</p>
+<pre><code class="language-shell">flush privileges;
+</code></pre>
+<p>第五步：设置root账号的登陆密码为root，并刷新</p>
+<pre><code class="language-shell">alter user 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+</code></pre>
+<p>刷新</p>
+<pre><code class="language-shell">flush privileges;
+</code></pre>
+<p>第六步：退出mysql<br>
+<code>exit;</code>或者 <code>Ctrl + z</code></p>
+<p>第七步：重启mysql服务<br>
+杀死mysql所有进程</p>
+<pre><code class="language-shell">sudo killall -u -mysql
+</code></pre>
+<p>重启</p>
+<pre><code class="language-shell">sudo /etc/init.d/mysql start
+</code></pre>
+<h5 id="设置mysql开机自启动">设置mysql开机自启动</h5>
+<p>设置自启动</p>
+<pre><code class="language-shell">sudo update-rc.d -f mysql defaults
+</code></pre>
+<p>查看是否自启动</p>
+<pre><code class="language-shell">sudo service mysql status
+</code></pre>
+<figure data-type="image" tabindex="2"><img src="https://evmleoe.github.io/post-images/1690352307763.jpg" alt="" loading="lazy"></figure>
+<p>取消mysql开机自启动</p>
+<pre><code class="language-shell">sudo update-rc.d -f mysql remove
+</code></pre>
+<h5 id="其他常用指令">其他常用指令：</h5>
+<p>查看mysql运行状态</p>
+<pre><code class="language-shell">sudo service mysql status
+</code></pre>
+<p>启动mysql服务</p>
+<pre><code class="language-shell">sudo service mysgl start
+</code></pre>
+<p>停止mysql服务</p>
+<pre><code class="language-shell">sudo service mysql stop
+</code></pre>
+
+          <div class="toc-container"><ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9mysql%E5%AF%86%E7%A0%81">修改mysql密码</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AEmysql%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8">设置mysql开机自启动</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4">其他常用指令：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+          
+          <hr />
+          <p class="next-post">下一篇：
+            <a href="https://evmleoe.github.io/post/process/">
+              <span class="post-title">
+                Linux / Ubuntu 进程命令&rarr;
+              </span>
+            </a>
+          </p>
+          
+          <div class="comment" style="text-align: center;">
+            
+
+            
+            
+          </div>
+        </div>
+      </div>
+  </article>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+              <!-- <li class="list-inline-item">
+              <a href="https://evmleoe.github.io/atom.xml" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+              </li> -->
+          </ul>
+          <p class="copyright text-muted">Copyright &copy;<span>Evm Blog</span><br><a href="https://github.com/getgridea/gridea" class="Themeinfo">Powered by Gridea</a></p>
+        </div>
+      </div>
+    </div>
+   </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://evmleoe.github.io/media/scripts/bootstrap.bundle.min.js"></script> -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/gh/Alanrk/clean-cdn@1.0/scripts/clean-blog.min.js"></script>
+  <!-- <script src="https://evmleoe.github.io/media/scripts/clean-blog.min.js"></script> -->
+  <script src="//instant.page/3.0.0" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+  <style type="text/css">a.back_to_top{text-decoration:none;position:fixed;bottom:40px;right:30px;background:#f0f0f0;height:40px;width:40px;border-radius:50%;line-height:36px;font-size:18px;text-align:center;transition-duration:.5s;transition-propety:background-color;display:none}a.back_to_top span{color:#888}a.back_to_top:hover{cursor:pointer;background:#dfdfdf}a.back_to_top:hover span{color:#555}@media print,screen and(max-width:580px){.back_to_top{display:none!important}}</style>
+<a id="back_to_top" href="#" class="back_to_top">
+  <span>▲</span></a>
+<script>$(document).ready((function(_this) {
+    return function() {
+      var bt;
+      bt = $('#back_to_top');
+      if ($(document).width() > 480) {
+        $(window).scroll(function() {
+          var st;
+          st = $(window).scrollTop();
+          if (st > 30) {
+            return bt.css('display', 'block')
+          } else {
+            return bt.css('display', 'none')
+          }
+        });
+        return bt.click(function() {
+          $('body,html').animate({
+            scrollTop: 0
+          },
+          800);
+          return false
+        })
+      }
+    }
+  })(this));</script>
+  
+  <script src="https://evmleoe.github.io/media/scripts/tocScript.js"></script>
+</body>
+
+</html>
